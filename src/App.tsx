@@ -19,10 +19,6 @@ export function App() {
     const [agent, setAgent] = useState<string>('');
     const [selectedMap, setSelectedMap] = useState<string>('');
 
-    setInterval(() => {
-        console.log(selectedMap);
-    }, 1000);
-
     return (
         <div className="App max-h-screen">
             <div className="main">
