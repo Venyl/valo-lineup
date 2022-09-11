@@ -1,0 +1,33 @@
+{
+    "KAY/O": {
+        "Ascent": {
+            "firstAbility": {
+                "name": "FRAG/ment",
+                "A": [
+                    { "vidId": "EgZ39cjAJuM", "spot": "A Default from A Main" },
+                    { "vidId": "yYydSJ-yJfA", "spot": "A Default from A Lobby" }
+                ]
+            }
+        },
+        "Bind": {
+            "secondAbility": {
+                "name": "FLASH/drive",
+                "B": [
+                    { "vidId": "EgZ39cjAJuM", "spot": "B Default from A Main" },
+                    { "vidId": "yYydSJ-yJfA", "spot": "B Default from A Lobby" }
+                ]
+            },
+            "thirdAbility": {
+                "name": "ZERO/point",
+                "B": [
+                    { "vidId": "EgZ39cjAJuM", "spot": "A Default from A Main" },
+                    { "vidId": "yYydSJ-yJfA", "spot": "A Default from A Lobby" }
+                ],
+                "Mid": [
+                    { "vidId": "EgZ39cjAJuM", "spot": "Mid Market from A Main" },
+                    { "vidId": "yYydSJ-yJfA", "spot": "Mid Market from A Lobby" }
+                ]
+            }
+        }
+    }
+}
