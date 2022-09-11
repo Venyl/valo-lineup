@@ -1,12 +1,11 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import LineupVideo from './LineupVideo';
+import data from '../utilities/lineupList.json';
 import useMap from '../utilities/hooks/useMap';
 import LineupList from './LineupList';
 import { capitalize } from '../utilities/capitalize';
 import Lineups from '../utilities/interfaces/Lineups';
 import { AgentContext } from '../App';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 
 interface contextType {
     vidId?: string;
@@ -15,14 +14,8 @@ interface contextType {
 export const VidIdContext = createContext<contextType>({});
 
 export default function LineupMenu() {
-    const { data, status } = useQuery(['lineups'], async () => {
-        const res = await axios.get('https://venyl.github.io/valo-lineup-api/lineupList.json');
-        const data = await res.data;
-        return data;
-    });
-
     const { agent } = useContext(AgentContext);
-    const [vidId, setVidId] = useState('');
+    const [vidId, setVidId] = useState<string>('');
     const selectedMap = useMap();
 
     useEffect(() => {
@@ -31,8 +24,7 @@ export default function LineupMenu() {
         };
     }, []);
 
-    if (status !== 'success') return <></>;
-    const agentLineups = data![agent as keyof typeof data];
+    const agentLineups = data[agent as keyof typeof data];
     const lineups: Lineups = agentLineups[capitalize(selectedMap) as keyof typeof agentLineups];
 
     return (

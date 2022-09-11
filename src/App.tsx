@@ -17,7 +17,7 @@ interface contextType {
 export const AgentContext = createContext<contextType>({});
 
 export function App() {
-    const [agent, setAgent] = useState('');
+    const [agent, setAgent] = useState<string>('');
     const client = new QueryClient();
 
     return (
