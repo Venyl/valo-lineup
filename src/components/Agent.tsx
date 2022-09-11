@@ -1,12 +1,12 @@
 import { useContext } from 'react';
-import { AgentContext } from '../App';
+import { useGlobalContext } from '../utilities/hooks/useGlobalContext';
 
 interface props {
     agentName: string;
 }
 
 export function Agent({ agentName }: props) {
-    const { setAgent } = useContext(AgentContext);
+    const { setAgent } = useGlobalContext();
     const agentImgs = {
         'KAY/O': 'https://static.wikia.nocookie.net/valorant/images/f/f0/KAYO_icon.png',
         Fade: 'https://valorantinfo.com/images/pl/fade_valorant_icon_2351.webp',

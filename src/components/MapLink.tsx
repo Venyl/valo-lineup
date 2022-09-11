@@ -1,16 +1,19 @@
-import { Link, useLocation } from 'react-router-dom';
+import { useContext } from 'react';
 import { capitalize } from '../utilities/capitalize';
-import useMap from '../utilities/hooks/useMap';
+import { useGlobalContext } from '../utilities/hooks/useGlobalContext';
 
 interface props {
     map: string;
 }
 
 export function MapLink({ map }: props) {
-    const selectedMap = useMap();
+    const { selectedMap, setSelectedMap } = useGlobalContext();
     return (
-        <Link className={String(selectedMap === map && 'selected')} to={map}>
+        <a
+            onClick={() => setSelectedMap!(map)}
+            className={`${String(selectedMap === map && 'selected')} cursor-pointer`}
+        >
             {capitalize(map)}
-        </Link>
+        </a>
     );
 }
